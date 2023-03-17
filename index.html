@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>15 puzzle</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1></h1>
+        <div class="size-board">board size:
+            <input id="4" class="radio" type="radio" name="size-board" value="4" checked>
+            <label for="4" class="size-selection">15</label>
+            <input id="5" class="radio" type="radio" name="size-board" value="5">
+            <label for="5" class="size-selection">24</label>
+        </div>
+        <div class="status">number of moves: <span>0</span></div>
+        <div class="board">
+        </div>
+        <div>
+            <button id="shuffle" class="shuffle btn">shuffle</button>
+            <button id="start" class="btn">new game</button>
+        </div>
+    </div>
+    <script src="./class/Map.js"></script>
+    <script src="./class/Coordinate.js"></script>
+    <script src="./class/Game.js"></script>
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
