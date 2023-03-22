@@ -150,7 +150,7 @@ function titleСhanges(size) {
 function puzzleSolved(solved) {
     if (solved) {
         setTimeout(() => {
-           vibrate([300, 300, 400, 400, 1000]);
+           vibrate([200, 200, 300, 300, 800]);
             let element = document.createElement('div');
             element.innerHTML = '<span>you won!!! &#127942;</span>';
             element.classList.add('boardBlack');
