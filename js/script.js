@@ -150,6 +150,7 @@ function titleСhanges(size) {
 function puzzleSolved(solved) {
     if (solved) {
         setTimeout(() => {
+             vibrate(1500);
             let element = document.createElement('div');
             element.innerHTML = '<span>you won!!! &#127942;</span>';
             element.classList.add('boardBlack');
@@ -161,6 +162,13 @@ function puzzleSolved(solved) {
 
     }
 }
+
 function removeBoard() {
     document.querySelector('.boardBlack').remove();
+}
+
+function vibrate(valMs) {
+    if (navigator.vibrate !== undefined) {
+        navigator.vibrate(valMs);
+    }
 }
