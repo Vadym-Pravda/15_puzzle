@@ -23,6 +23,7 @@ function startGame() {
 
 startGameButton.onclick = () => {
     startGame()
+    vibrate(50);
 }
 
 shuffleButton.onclick = () => {
@@ -31,6 +32,7 @@ shuffleButton.onclick = () => {
     setPositionPuzzle(puzzles);
     puzzleSolved(game.solved());
     moves.innerHTML = game.moves;
+    vibrate(50);
 }
 
 function setPositionPuzzle(puzzles) {
@@ -54,6 +56,7 @@ board.addEventListener('click', (event) => {
     setPositionPuzzle(puzzles);
     moves.innerHTML = game.moves;
     puzzleSolved(game.solved());
+    vibrate(50);
 });
 
 function findCoordinateByPuzzle(value, arr) {
@@ -71,6 +74,7 @@ sizeBoard.addEventListener('click', (event) => {
     if (radio.checked) return;
     titleСhanges(selectedSize(sizes));
     startGame()
+    vibrate(50);
 });
 
 ///////////////---------Secondary Function-----------///////////////
@@ -150,7 +154,7 @@ function titleСhanges(size) {
 function puzzleSolved(solved) {
     if (solved) {
         setTimeout(() => {
-           vibrate([100, 100, 300, 300, 600]);
+            vibrate([300, 300, 400, 400, 1000]);
             let element = document.createElement('div');
             element.innerHTML = '<span>you won!!! &#127942;</span>';
             element.classList.add('boardBlack');
