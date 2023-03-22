@@ -23,7 +23,7 @@ function startGame() {
 
 startGameButton.onclick = () => {
     startGame()
-    vibrate(10);
+    vibrate(5);
 }
 
 shuffleButton.onclick = () => {
@@ -32,7 +32,7 @@ shuffleButton.onclick = () => {
     setPositionPuzzle(puzzles);
     puzzleSolved(game.solved());
     moves.innerHTML = game.moves;
-    vibrate(10);
+    vibrate(5);
 }
 
 function setPositionPuzzle(puzzles) {
@@ -56,7 +56,7 @@ board.addEventListener('click', (event) => {
     setPositionPuzzle(puzzles);
     moves.innerHTML = game.moves;
     puzzleSolved(game.solved());
-    vibrate(10);
+    vibrate(5);
 });
 
 function findCoordinateByPuzzle(value, arr) {
@@ -71,10 +71,10 @@ function findCoordinateByPuzzle(value, arr) {
 sizeBoard.addEventListener('click', (event) => {
     const radio = event.target.closest('.radio');
     if (!radio) return;
+    vibrate(5);
     if (radio.checked) return;
     titleСhanges(selectedSize(sizes));
     startGame()
-    vibrate(10);
 });
 
 ///////////////---------Secondary Function-----------///////////////
@@ -154,7 +154,7 @@ function titleСhanges(size) {
 function puzzleSolved(solved) {
     if (solved) {
         setTimeout(() => {
-            vibrate([100, 100, 200, 400]);
+            vibrate([100, 100, 300]);
             let element = document.createElement('div');
             element.innerHTML = '<span>you won!!! &#127942;</span>';
             element.classList.add('boardBlack');
@@ -164,6 +164,16 @@ function puzzleSolved(solved) {
     else {
         if (document.querySelector('.boardBlack')) removeBoard();
 
+    }
+}
+
+function removeBoard() {
+    document.querySelector('.boardBlack').remove();
+}
+
+function vibrate(valMs) {
+    if (navigator.vibrate !== undefined) {
+        navigator.vibrate(valMs);
     }
 }
 
