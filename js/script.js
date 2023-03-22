@@ -22,7 +22,7 @@ function startGame() {
 }
 
 startGameButton.onclick = () => {
-    startGame()
+    startGame();
     vibrate(5);
 }
 
@@ -72,12 +72,9 @@ sizeBoard.addEventListener('click', (event) => {
     const radio = event.target.closest('.radio');
     if (!radio) return;
     vibrate(5);
-    if (radio.checked) return;
     titleСhanges(selectedSize(sizes));
-    startGame()
+    startGame();
 });
-
-///////////////---------Secondary Function-----------///////////////
 
 function selectedSize(arr) {
     for (let iterator of arr) {
@@ -87,17 +84,6 @@ function selectedSize(arr) {
 }
 
 ///////////////---------DOM element changes-----------///////////////
-
-////create new game button.
-
-function createElemNewGame() {
-
-    if (document.querySelector('.boardBlack')) removeBoard();
-    let element = document.createElement('div');
-    element.innerHTML = '<span>new game</span>';
-    element.classList.add('boardBlack');
-    board.append(element);
-}
 
 function removePuzzles() {
     puzzles.forEach(element => {
@@ -150,13 +136,13 @@ function titleСhanges(size) {
     }
 }
 
-//create new element than solved.
+//create a new element when solved.
 function puzzleSolved(solved) {
     if (solved) {
         setTimeout(() => {
             vibrate([100, 100, 300]);
             let element = document.createElement('div');
-            element.innerHTML = '<span>you won!!! &#127942;</span>';
+            element.innerHTML = '<span>you won! &#127942;</span>';
             element.classList.add('boardBlack');
             board.append(element);
         }, 400);
@@ -170,17 +156,7 @@ function puzzleSolved(solved) {
 function removeBoard() {
     document.querySelector('.boardBlack').remove();
 }
-
-function vibrate(valMs) {
-    if (navigator.vibrate !== undefined) {
-        navigator.vibrate(valMs);
-    }
-}
-
-function removeBoard() {
-    document.querySelector('.boardBlack').remove();
-}
-
+//phone vibrate
 function vibrate(valMs) {
     if (navigator.vibrate !== undefined) {
         navigator.vibrate(valMs);
