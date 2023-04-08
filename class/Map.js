@@ -3,6 +3,7 @@
     |
     |           Y
  ---|------------>
+ 
 */
 class Map {
     constructor(size) {
