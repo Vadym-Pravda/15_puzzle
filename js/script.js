@@ -17,7 +17,7 @@ function startGame() {
     puzzles = Array.from(board.querySelectorAll('.puzzle'));
     setPositionPuzzle(puzzles);
     moves.innerHTML = game.moves;
-    titleСhanges(selectedSize(sizes));
+    changeTitle(selectedSize(sizes));
     if (document.querySelector('.boardBlack')) removeBoard();
 }
 
@@ -72,7 +72,7 @@ sizeBoard.addEventListener('click', (event) => {
     const radio = event.target.closest('.radio');
     if (!radio) return;
     vibrate(5);
-    titleСhanges(selectedSize(sizes));
+    changeTitle(selectedSize(sizes));
     startGame();
 });
 
@@ -123,7 +123,7 @@ function setPuzzleStyle(node, x, y, checkPos) {
     }
 }
 
-function titleСhanges(size) {
+function changeTitle(size) {
     let titleH1 = document.querySelector('h1');
     if (size == 4) {
         document.title = "15 PUZZLE";
