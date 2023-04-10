@@ -93,8 +93,6 @@ function removePuzzles() {
 
 //create new element puzzle.
 function createPuzzles(size) {
-
-    // let assembly = document.createElement('div');_____????
     for (let i = 0; i < size ** 2; i++) {
         let element = document.createElement('div');
         element.classList.add('puzzle');
