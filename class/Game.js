@@ -75,7 +75,6 @@ class Game {
         const arr1 = this.map.map.flat();
         const arr2 = this.mapCheck.map.flat();
         if (arr1.length !== arr2.length) return false;
-        if (this.moves == 0) return false;
         for (let i = 0; i < arr1.length; i++) {
             if (arr1[i] !== arr2[i]) return false;
         }

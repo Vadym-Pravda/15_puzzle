@@ -51,7 +51,8 @@ function setPositionPuzzle(puzzles) {
 board.addEventListener('click', (event) => {
     const puzzle = event.target.closest('.puzzle');
     if (!puzzle) return;
-    const puzzleCoord = findCoordinateByPuzzle(Number(puzzle.innerHTML), game.map.map)
+    if (game.solved()) return;
+    const puzzleCoord = findCoordinateByPuzzle(Number(puzzle.innerHTML), game.map.map);
     game.pressAt(puzzleCoord);
     setPositionPuzzle(puzzles);
     moves.innerHTML = game.moves;
