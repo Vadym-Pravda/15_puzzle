@@ -35,9 +35,7 @@ class Game {
 
     //press puzzle and her moving
     pressAt(selectedCoord) {
-        // console.log(this.solved())
-        // if (this.solved()) return 0;
-        if (this.space == selectedCoord) return 0;                                         //press by spece place
+        if (this.space == selectedCoord) return 0;                                         //press by space place
         if (selectedCoord.x != this.space.x && selectedCoord.y != this.space.y) return 0;    // press by diagonal
         let steps = Math.abs(selectedCoord.x - this.space.x)
             + Math.abs(selectedCoord.y - this.space.y);
@@ -72,11 +70,11 @@ class Game {
         return this.moves;
     }
 
-
+    //isSolved
     solved() {
         const arr1 = this.map.map.flat();
         const arr2 = this.mapCheck.map.flat();
-        if (arr1.lenght !== arr2.lenght) return false;
+        if (arr1.length !== arr2.length) return false;
         if (this.moves == 0) return false;
         for (let i = 0; i < arr1.length; i++) {
             if (arr1[i] !== arr2[i]) return false;

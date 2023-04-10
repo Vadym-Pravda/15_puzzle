@@ -124,13 +124,13 @@ function setPuzzleStyle(node, x, y, checkPos) {
 }
 
 function titleСhanges(size) {
-    let titileH1 = document.querySelector('h1');
+    let titleH1 = document.querySelector('h1');
     if (size == 4) {
         document.title = "15 PUZZLE";
-        titileH1.textContent = '15 puzzle';
+        titleH1.textContent = '15 puzzle';
     } else if (size == 5) {
         document.title = "24 PUZZLE";
-        titileH1.textContent = '24 puzzle';
+        titleH1.textContent = '24 puzzle';
     }
 }
 
