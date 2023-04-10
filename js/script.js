@@ -19,6 +19,7 @@ function startGame() {
     moves.innerHTML = game.moves;
     changeTitle(selectedSize(sizes));
     if (document.querySelector('.boardBlack')) removeBoard();
+    if (game.solved()) document.querySelector('.shuffle').classList.add('flashing');
 }
 
 startGameButton.onclick = () => {
@@ -32,6 +33,7 @@ shuffleButton.onclick = () => {
     setPositionPuzzle(puzzles);
     puzzleSolved(game.solved());
     moves.innerHTML = game.moves;
+    document.querySelector('.shuffle').classList.remove('flashing');
     vibrate(5);
 }
 
@@ -144,6 +146,7 @@ function puzzleSolved(solved) {
             element.innerHTML = '<span>you won! &#127942;</span>';
             element.classList.add('boardBlack');
             board.append(element);
+            document.querySelector('.shuffle').classList.add('flashing');
         }, 400);
     }
     else {

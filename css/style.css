@@ -93,6 +93,20 @@ h1 {
     color: lawngreen;
 }
 
+.flashing {
+    animation-name: blink;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    50% {
+        color: lawngreen;
+        border: 4px solid lawngreen;
+    }
+}
+
 /* radio */
 .size-board {
     margin-bottom: 1rem;
